@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Elzeba 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.pixabay.com/photo/2017/01/31/13/14/cake-2020481_1280.png') repeat center center fixed,
+                  url('https://cdn.pixabay.com/photo/2017/02/01/10/28/birthday-2023954_1280.png') repeat bottom right;
+      background-size: 300px, 300px;
+      background-color: #ffe6cc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 3em;
+      margin-top: 30px;
+      text-shadow: 2px 2px #ffb3d9;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.3em;
+    }
+
+    .nirvana {
+      position: absolute;
+      color: #fff;
+      font-weight: bold;
+      font-size: 2em;
+      animation: cornerSlide 6s infinite;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    @keyframes cornerSlide {
+      0%   { left: 0; top: 0; }
+      25%  { left: calc(100% - 120px); top: 0; }
+      50%  { left: calc(100% - 120px); top: calc(100% - 60px); }
+      75%  { left: 0; top: calc(100% - 60px); }
+      100% { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    }
+
+    .snake-light {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      z-index: 999;
+      animation: glow-colors 2s linear infinite;
+    }
+
+    @keyframes glow-colors {
+      0%   { background: red; box-shadow: 0 0 8px red; }
+      25%  { background: yellow; box-shadow: 0 0 8px yellow; }
+      50%  { background: lime; box-shadow: 0 0 8px lime; }
+      75%  { background: cyan; box-shadow: 0 0 8px cyan; }
+      100% { background: red; box-shadow: 0 0 8px red; }
+    }
+
+    .teacher-img {
+      max-width: 200px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      display: none;
+    }
+
+    .love-message {
+      display: none;
+      margin: 20px auto;
+      font-size: 1.2em;
+      background: #fff0f5;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
+    }
+
+    .love-btn {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .emoji-balloon {
+      position: fixed;
+      font-size: 2rem;
+      animation: floatUp 6s ease-in infinite;
+      z-index: 998;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(100vh); opacity: 0; }
+      to { transform: translateY(-100vh); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday Elzeba Jerotich 🎂</h1>
+  <p>May your day be filled with love, joy, and endless smiles! 💖✨</p>
+
+  <button class="love-btn" onclick="toggleTeacherPhoto()">Open This 📷</button>
+  <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Teacher" class="teacher-img" id="teacherPhoto" />
+
+  <button class="love-btn" onclick="askAgeBeforeLove()">Tap to Open 💌</button>
+  <button class="love-btn" onclick="startEndlessBalloons()">Option 3:Click Several Times  🎈</button>
+
+  <div class="love-message" id="loveNote">
+   💫 Birthday Girl💫,<br><br>
+
+💕
+Your presence in my life brings endless joy and light. <br><br>
+Happy birthday shy girl😍❤️! 💫<br><br>
+
+Shyness tuipee pilot wa aviator sasa <br>
+❤️ #Hakuna
+  </div>
+
+  <div class="nirvana">NIRVANA</div>
+
+  <audio id="birthdaySong" autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function createSnakeLights(count = 40) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      for (let i = 0; i < count; i++) {
+        const light = document.createElement('div');
+        light.classList.add('snake-light');
+        light.style.left = Math.random() * w + 'px';
+        light.style.top = Math.random() * h + 'px';
+        document.body.appendChild(light);
+      }
+    }
+
+    function toggleTeacherPhoto() {
+      const img = document.getElementById('teacherPhoto');
+      img.style.display = img.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function askAgeBeforeLove() {
+      const age = prompt("Please enter the age Elzeba is turning:");
+      if (age === '21' || age === '22') {
+        document.getElementById('loveNote').style.display = 'block';
+      } else {
+        alert("😂😂 Oops! That's not it. Are you guessing your own age now? Try again!");
+      }
+    }
+
+    function launchBalloons() {
+      const emojis = ['💖','😍','😘','🥰','💘','💝','💕','💗','💓'];
+      for (let i = 0; i < 30; i++) {
+        const emoji = document.createElement('div');
+        emoji.classList.add('emoji-balloon');
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * window.innerWidth + 'px';
+        emoji.style.animationDuration = (4 + Math.random() * 4) + 's';
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 8000);
+      }
+    }
+
+    let balloonInterval;
+    function startEndlessBalloons() {
+      if (!balloonInterval) {
+        balloonInterval = setInterval(launchBalloons, 3000);
+      }
+    }
+
+    createSnakeLights();
+
+    window.addEventListener('click', () => {
+      const audio = document.getElementById('birthdaySong');
+      audio.muted = false;
+      audio.play().catch(err => console.log('Autoplay failed:', err));
+    }, { once: true });
+  </script>
+  <footer>
+    &copy;@😍ELZEBA💫
+  </footer>
+</body>
+</html>
